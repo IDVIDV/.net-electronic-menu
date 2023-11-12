@@ -3,17 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElectronicMenu.WebAPI", "ElectronicMenu.WebAPI\ElectronicMenu.WebAPI.csproj", "{D1F4D84D-E260-42E9-9312-FBD150D23D10}"
-	ProjectSection(ProjectDependencies) = postProject
-		{5414F315-50BF-4374-8357-881D4795AE96} = {5414F315-50BF-4374-8357-881D4795AE96}
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElectronicMenu.DataAccess", "ElectronicMenu.DataAccess\ElectronicMenu.DataAccess.csproj", "{C793C68A-0152-43CB-8C1A-B88ACAC2245E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectronicMenu.DataAccess", "ElectronicMenu.DataAccess\ElectronicMenu.DataAccess.csproj", "{C793C68A-0152-43CB-8C1A-B88ACAC2245E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectronicMenu.BL", "ElectronicMenu.BL\ElectronicMenu.BL.csproj", "{5414F315-50BF-4374-8357-881D4795AE96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElectronicMenu.BL", "ElectronicMenu.BL\ElectronicMenu.BL.csproj", "{5414F315-50BF-4374-8357-881D4795AE96}"
 	ProjectSection(ProjectDependencies) = postProject
 		{C793C68A-0152-43CB-8C1A-B88ACAC2245E} = {C793C68A-0152-43CB-8C1A-B88ACAC2245E}
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElectronicMenu.Services", "ElectronicMenu.Services\ElectronicMenu.Services.csproj", "{0907A877-E125-4B1B-95AB-2769137C5CB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +18,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D1F4D84D-E260-42E9-9312-FBD150D23D10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D1F4D84D-E260-42E9-9312-FBD150D23D10}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D1F4D84D-E260-42E9-9312-FBD150D23D10}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D1F4D84D-E260-42E9-9312-FBD150D23D10}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C793C68A-0152-43CB-8C1A-B88ACAC2245E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C793C68A-0152-43CB-8C1A-B88ACAC2245E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C793C68A-0152-43CB-8C1A-B88ACAC2245E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +26,10 @@ Global
 		{5414F315-50BF-4374-8357-881D4795AE96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5414F315-50BF-4374-8357-881D4795AE96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5414F315-50BF-4374-8357-881D4795AE96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0907A877-E125-4B1B-95AB-2769137C5CB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0907A877-E125-4B1B-95AB-2769137C5CB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0907A877-E125-4B1B-95AB-2769137C5CB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0907A877-E125-4B1B-95AB-2769137C5CB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
