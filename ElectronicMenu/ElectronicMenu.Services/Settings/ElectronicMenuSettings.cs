@@ -2,5 +2,6 @@
 {
     public class ElectronicMenuSettings
     {
+        public string ElectronicMenuDbContextConnectionString { get; set; }
     }
 }
