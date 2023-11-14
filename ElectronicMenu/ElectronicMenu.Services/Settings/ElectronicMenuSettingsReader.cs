@@ -1,4 +1,4 @@
-﻿namespace ElectronicMenu.WebAPI.Settings
+﻿namespace ElectronicMenu.Services.Settings
 {
     public class ElectronicMenuSettingsReader
     {

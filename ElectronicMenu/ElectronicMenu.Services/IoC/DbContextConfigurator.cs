@@ -1,8 +1,8 @@
 ﻿using ElectronicMenu.DataAccess;
-using ElectronicMenu.WebAPI.Settings;
+using ElectronicMenu.Services.Settings;
 using Microsoft.EntityFrameworkCore;
 
-namespace ElectronicMenu.WebAPI.IoC
+namespace ElectronicMenu.Services.IoC
 {
     public class DbContextConfigurator
     {
