@@ -1,4 +1,4 @@
-﻿namespace ElectronicMenu.WebAPI.IoC
+﻿namespace ElectronicMenu.Services.IoC
 {
     /// <summary>
     /// Static class for Swagger configuration

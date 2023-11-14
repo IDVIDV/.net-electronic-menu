@@ -12,6 +12,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElectronicMenu.BL", "Electr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElectronicMenu.Services", "ElectronicMenu.Services\ElectronicMenu.Services.csproj", "{0907A877-E125-4B1B-95AB-2769137C5CB6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{FD7F7A3D-E18E-4A0F-8F83-C83775387091}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectronicMenu.UnitTests", "ElectronicMenu.UnitTests\ElectronicMenu.UnitTests.csproj", "{46642FAA-F4A5-4254-9BC9-97E8D9122502}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,9 +34,16 @@ Global
 		{0907A877-E125-4B1B-95AB-2769137C5CB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0907A877-E125-4B1B-95AB-2769137C5CB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0907A877-E125-4B1B-95AB-2769137C5CB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46642FAA-F4A5-4254-9BC9-97E8D9122502}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46642FAA-F4A5-4254-9BC9-97E8D9122502}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46642FAA-F4A5-4254-9BC9-97E8D9122502}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46642FAA-F4A5-4254-9BC9-97E8D9122502}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{46642FAA-F4A5-4254-9BC9-97E8D9122502} = {FD7F7A3D-E18E-4A0F-8F83-C83775387091}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {03C19C51-5996-41F8-854D-FF8007D8AFC9}

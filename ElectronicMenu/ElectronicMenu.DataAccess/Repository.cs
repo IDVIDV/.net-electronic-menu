@@ -25,10 +25,16 @@ namespace ElectronicMenu.DataAccess
             return context.Set<T>().Where(filter).ToList();
         }
 
-        public IEnumerable<T> GetAll(IComparer<T> comparer)
+        //public IEnumerable<T> GetAll(IComparer<T> comparer)
+        //{
+        //    using var context = _contextFactory.CreateDbContext();
+        //    return context.Set<T>().Order(comparer).ToList();
+        //}
+
+        public IEnumerable<T> GetAll<TKey>(Expression<Func<T, TKey>> keySelector)
         {
             using var context = _contextFactory.CreateDbContext();
-            return context.Set<T>().Order(comparer).ToList();
+            return context.Set<T>().OrderBy(keySelector).ToList();
         }
 
         public T? GetById(int id)

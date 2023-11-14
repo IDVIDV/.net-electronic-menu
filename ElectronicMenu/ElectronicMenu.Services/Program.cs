@@ -1,5 +1,5 @@
-using ElectronicMenu.WebAPI.IoC;
-using ElectronicMenu.WebAPI.Settings;
+using ElectronicMenu.Services.IoC;
+using ElectronicMenu.Services.Settings;
 
 var configuration = new ConfigurationBuilder()
 .AddJsonFile("appsettings.json", optional: false)
