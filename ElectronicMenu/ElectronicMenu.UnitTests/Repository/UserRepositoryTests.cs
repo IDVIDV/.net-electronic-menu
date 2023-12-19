@@ -19,21 +19,18 @@ namespace ElectronicMenu.UnitTests.Repository
             new UserEntity()
             {
                 Login = "Test1",
-                PasswordHash = "TestHash1",
                 PhoneNumber = "TestNumber1",
                 ExternalId = Guid.NewGuid()
             },
             new UserEntity()
             {
                 Login = "Test2",
-                PasswordHash = "TestHash2",
                 PhoneNumber = "TestNumber2",
                 ExternalId = Guid.NewGuid()
             },
             new UserEntity()
             {
                 Login = "Test3",
-                PasswordHash = "TestHash3",
                 PhoneNumber = "TestNumber3",
                 ExternalId = Guid.NewGuid()
             },
@@ -60,21 +57,18 @@ namespace ElectronicMenu.UnitTests.Repository
             new UserEntity()
             {
                 Login = "YesTest1",
-                PasswordHash = "TestHash1",
                 PhoneNumber = "TestNumber1",
                 ExternalId = Guid.NewGuid()
             },
             new UserEntity()
             {
                 Login = "YesTest2",
-                PasswordHash = "TestHash2",
                 PhoneNumber = "TestNumber2",
                 ExternalId = Guid.NewGuid()
             },
             new UserEntity()
             {
                 Login = "NoTest3",
-                PasswordHash = "TestHash3",
                 PhoneNumber = "TestNumber3",
                 ExternalId = Guid.NewGuid()
             },
@@ -101,21 +95,18 @@ namespace ElectronicMenu.UnitTests.Repository
             new UserEntity()
             {
                 Login = "2Test1",
-                PasswordHash = "TestHash1",
                 PhoneNumber = "TestNumber1",
                 ExternalId = Guid.NewGuid()
             },
             new UserEntity()
             {
                 Login = "3Test2",
-                PasswordHash = "TestHash2",
                 PhoneNumber = "TestNumber2",
                 ExternalId = Guid.NewGuid()
             },
             new UserEntity()
             {
                 Login = "1Test3",
-                PasswordHash = "TestHash3",
                 PhoneNumber = "TestNumber3",
                 ExternalId = Guid.NewGuid()
             },
@@ -143,7 +134,6 @@ namespace ElectronicMenu.UnitTests.Repository
             var user = new UserEntity()
             {
                 Login = "TestNewUser",
-                PasswordHash = "TestPasswordHash",
                 PhoneNumber = "TestPhoneNumber",
                 ExternalId = Guid.NewGuid()
             };
@@ -174,7 +164,6 @@ namespace ElectronicMenu.UnitTests.Repository
             var user = new UserEntity()
             {
                 Login = "TestLogin",
-                PasswordHash = "TestNewUser",
                 PhoneNumber = "TestPhoneNumber",
                 ExternalId = Guid.NewGuid()
             };
@@ -202,7 +191,6 @@ namespace ElectronicMenu.UnitTests.Repository
             var user = new UserEntity()
             {
                 Login = "TestLogin",
-                PasswordHash = "TestNewUser",
                 PhoneNumber = "TestNumber",
                 ExternalId = Guid.NewGuid()
             };

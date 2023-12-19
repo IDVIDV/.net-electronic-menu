@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 
 namespace ElectronicMenu.DataAccess
 {
-    public interface IRepository<T> where T : BaseEntity
+    public interface IRepository<T> where T : class, IBaseEntity
     {
         IEnumerable<T> GetAll(); //Получение всех записей
         IEnumerable<T> GetAll(Expression<Func<T, bool>> filter); //Получение всех записей, подходящих по фильтру

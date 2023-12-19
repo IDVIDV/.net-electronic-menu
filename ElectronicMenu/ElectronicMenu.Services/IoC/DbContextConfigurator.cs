@@ -18,7 +18,7 @@ namespace ElectronicMenu.Services.IoC
             using var scope = app.ApplicationServices.CreateScope();
             var contextFactory = scope.ServiceProvider.GetRequiredService<IDbContextFactory<ElectronicMenuDbContext>>();
             using var context = contextFactory.CreateDbContext();
-            context.Database.Migrate(); //makes last migrations to db and creates database if it doesn't exist
+            context.Database.Migrate();
         }
     }
 }

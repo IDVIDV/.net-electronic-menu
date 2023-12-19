@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 
 namespace ElectronicMenu.DataAccess
 {
-    public class Repository<T> : IRepository<T> where T : BaseEntity
+    public class Repository<T> : IRepository<T> where T : class, IBaseEntity
     {
         private readonly IDbContextFactory<ElectronicMenuDbContext> _contextFactory;
 
