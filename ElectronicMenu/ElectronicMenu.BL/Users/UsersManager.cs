@@ -16,15 +16,6 @@ namespace ElectronicMenu.BL.Users
             _mapper = mapper;
         }
 
-        public UserModel CreateUser(CreateUserModel model)
-        {
-            UserEntity entity = _mapper.Map<UserEntity>(model);
-
-            _userRepository.Save(entity);
-
-            return _mapper.Map<UserModel>(model);
-        }
-
         public void DeleteUser(Guid id)
         {
             UserEntity? entity = _userRepository.GetById(id);

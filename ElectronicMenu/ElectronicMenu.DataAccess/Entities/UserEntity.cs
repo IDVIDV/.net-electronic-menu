@@ -10,7 +10,6 @@ namespace ElectronicMenu.DataAccess.Entities
         public DateTime ModificationTime { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public DateTime CreationTime { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public string Login { get; set; }
         public string PhoneNumber { get; set; }
 
         public virtual ICollection<OrderEntity> Orders { get; set; }

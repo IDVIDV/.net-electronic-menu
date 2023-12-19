@@ -9,11 +9,6 @@ namespace ElectronicMenu.Services.Controllers.Users.Entities
         [MinLength(4)]
         public string Login { get; set; }
 
-        //???????
-        [Required]
-        [MinLength(6)]
-        public string Password { get; set; }
-
         [Required]
         [Phone]
         public string PhoneNumber { get; set; }

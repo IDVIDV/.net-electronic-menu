@@ -18,19 +18,16 @@ namespace ElectronicMenu.UnitTests.Repository
             {
             new UserEntity()
             {
-                Login = "Test1",
                 PhoneNumber = "TestNumber1",
                 ExternalId = Guid.NewGuid()
             },
             new UserEntity()
             {
-                Login = "Test2",
                 PhoneNumber = "TestNumber2",
                 ExternalId = Guid.NewGuid()
             },
             new UserEntity()
             {
-                Login = "Test3",
                 PhoneNumber = "TestNumber3",
                 ExternalId = Guid.NewGuid()
             },
@@ -47,7 +44,7 @@ namespace ElectronicMenu.UnitTests.Repository
         }
 
         [Test]
-        public void GetAllUsersWithFilterTest()
+        public void GetAllUsersSortedByPhoneTest()
         {
             //prepare
             using var context = DbContextFactory.CreateDbContext();
@@ -56,57 +53,16 @@ namespace ElectronicMenu.UnitTests.Repository
             {
             new UserEntity()
             {
-                Login = "YesTest1",
                 PhoneNumber = "TestNumber1",
                 ExternalId = Guid.NewGuid()
             },
             new UserEntity()
             {
-                Login = "YesTest2",
                 PhoneNumber = "TestNumber2",
                 ExternalId = Guid.NewGuid()
             },
             new UserEntity()
             {
-                Login = "NoTest3",
-                PhoneNumber = "TestNumber3",
-                ExternalId = Guid.NewGuid()
-            },
-            };
-            context.Users.AddRange(users);
-            context.SaveChanges();
-
-            //execute
-            var repository = new Repository<UserEntity>(DbContextFactory);
-            var actualUsers = repository.GetAll(user => user.Login.StartsWith("Yes"));
-
-            //assert
-            actualUsers.Should().BeEquivalentTo(users.Where(user => user.Login.StartsWith("Yes")), options => options.Excluding(user => user.Orders));
-        }
-
-        [Test]
-        public void GetAllUsersSortedByLoginTest()
-        {
-            //prepare
-            using var context = DbContextFactory.CreateDbContext();
-
-            var users = new UserEntity[]
-            {
-            new UserEntity()
-            {
-                Login = "2Test1",
-                PhoneNumber = "TestNumber1",
-                ExternalId = Guid.NewGuid()
-            },
-            new UserEntity()
-            {
-                Login = "3Test2",
-                PhoneNumber = "TestNumber2",
-                ExternalId = Guid.NewGuid()
-            },
-            new UserEntity()
-            {
-                Login = "1Test3",
                 PhoneNumber = "TestNumber3",
                 ExternalId = Guid.NewGuid()
             },
@@ -117,11 +73,11 @@ namespace ElectronicMenu.UnitTests.Repository
             //execute
             var repository = new Repository<UserEntity>(DbContextFactory);
             //var actualUsersUsingComparer = repository.GetAll(Comparer<UserEntity>.Create((user1, user2) => user1.Login.ToLower().CompareTo(user2.Login.ToLower())));
-            var actualUsersUsingKeySelector = repository.GetAll(user => user.Login.ToLower());
+            var actualUsersUsingKeySelector = repository.GetAll(user => user.PhoneNumber);
 
             //assert
             //actualUsersUsingComparer.Should().BeEquivalentTo(users.OrderBy(user => user.Login.ToLower()), options => options.Excluding(user => user.Orders));
-            actualUsersUsingKeySelector.Should().BeEquivalentTo(users.OrderBy(user => user.Login.ToLower()), options => options.Excluding(user => user.Orders));
+            actualUsersUsingKeySelector.Should().BeEquivalentTo(users.OrderBy(user => user.PhoneNumber), options => options.Excluding(user => user.Orders));
             //actualUsersUsingKeySelector.Should().BeEquivalentTo(actualUsersUsingComparer, options => options.Excluding(user => user.Orders));
         }
 
@@ -133,7 +89,6 @@ namespace ElectronicMenu.UnitTests.Repository
 
             var user = new UserEntity()
             {
-                Login = "TestNewUser",
                 PhoneNumber = "TestPhoneNumber",
                 ExternalId = Guid.NewGuid()
             };
@@ -163,7 +118,6 @@ namespace ElectronicMenu.UnitTests.Repository
 
             var user = new UserEntity()
             {
-                Login = "TestLogin",
                 PhoneNumber = "TestPhoneNumber",
                 ExternalId = Guid.NewGuid()
             };
@@ -171,8 +125,6 @@ namespace ElectronicMenu.UnitTests.Repository
             context.SaveChanges();
 
             //execute
-
-            user.Login = "TestNewLogin";
             user.PhoneNumber= "TestNewNumber";
             var repository = new Repository<UserEntity>(DbContextFactory);
             repository.Save(user);
@@ -190,7 +142,6 @@ namespace ElectronicMenu.UnitTests.Repository
 
             var user = new UserEntity()
             {
-                Login = "TestLogin",
                 PhoneNumber = "TestNumber",
                 ExternalId = Guid.NewGuid()
             };

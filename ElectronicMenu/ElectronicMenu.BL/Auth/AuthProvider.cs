@@ -74,9 +74,9 @@ namespace ElectronicMenu.BL.Auth
             };
         }
 
-        public async Task RegisterUser(string login, string password)
+        public async Task RegisterUser(RegisterUserModel model)
         {
-            var user = await _userManager.FindByNameAsync(login);
+            var user = await _userManager.FindByNameAsync(model.Login);
             if (!(user is null))
             {
                 throw new Exception();  //Пользователь уже есть
@@ -84,10 +84,11 @@ namespace ElectronicMenu.BL.Auth
 
             UserEntity userEntity = new UserEntity()
             {
-                Login = login
+                UserName = model.Login,
+                PhoneNumber = model.PhoneNumber
             };
 
-            var identityResult =  _userManager.CreateAsync(user, password);
+            var identityResult =  _userManager.CreateAsync(user, model.Password);
             if (!identityResult.IsCompletedSuccessfully)
             {
                 throw new Exception();

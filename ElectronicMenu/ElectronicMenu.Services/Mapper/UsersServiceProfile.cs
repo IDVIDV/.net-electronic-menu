@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using ElectronicMenu.BL.Auth.Entities;
 using ElectronicMenu.BL.Positions.Entities;
 using ElectronicMenu.BL.Users.Entities;
 using ElectronicMenu.Services.Controllers.Positions.Entities;
@@ -11,8 +12,7 @@ namespace ElectronicMenu.Services.Mapper
         public UsersServiceProfile()
         {
             CreateMap<UpdateUserRequest, UpdateUserModel>();
-            CreateMap<RegisterUserRequest, CreateUserModel>();
-
+            CreateMap<RegisterUserRequest, RegisterUserModel>();
         }
     }
 }

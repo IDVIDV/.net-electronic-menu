@@ -51,9 +51,7 @@ namespace ElectronicMenu.Services.Controllers.Users
         {
             try
             {
-                await _authProvider.RegisterUser(request.Login, request.Password);
-                UserModel user = _usersManager.CreateUser(_mapper.Map<CreateUserModel>(request));
-
+                await _authProvider.RegisterUser(_mapper.Map<RegisterUserModel>(request));
                 return Ok();
             }
             catch (Exception ex)
