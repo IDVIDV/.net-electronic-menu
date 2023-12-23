@@ -24,6 +24,7 @@ var app = builder.Build();
 SerilogConfigurator.ConfigureApplication(app);
 SwaggerConfigurator.ConfigureApplication(app);
 DbContextConfigurator.ConfigureApplication(app);
+AuthorizationConfigurator.ConfigureApplication(app);
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
