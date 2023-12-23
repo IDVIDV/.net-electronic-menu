@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ElectronicMenu.DataAccess.Migrations
 {
     [DbContext(typeof(ElectronicMenuDbContext))]
-    [Migration("20231219195131_identity_table")]
-    partial class identity_table
+    [Migration("20231223194643_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

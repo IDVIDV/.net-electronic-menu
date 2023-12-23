@@ -88,7 +88,7 @@ namespace ElectronicMenu.BL.Auth
                 PhoneNumber = model.PhoneNumber
             };
 
-            var identityResult =  _userManager.CreateAsync(user, model.Password);
+            var identityResult =  _userManager.CreateAsync(userEntity, model.Password);
             if (!identityResult.IsCompletedSuccessfully)
             {
                 throw new Exception();
