@@ -43,9 +43,9 @@ namespace ElectronicMenu.BL.Users
             newEntity.CreationTime = entity.CreationTime;
             newEntity.ModificationTime = entity.ModificationTime;
 
-            _userRepository.Save(entity);
+            _userRepository.Save(newEntity);
 
-            return _mapper.Map<UserModel>(entity);
+            return _mapper.Map<UserModel>(newEntity);
         }
     }
 }
