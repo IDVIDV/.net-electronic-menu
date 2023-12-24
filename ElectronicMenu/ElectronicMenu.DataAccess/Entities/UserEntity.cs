@@ -6,9 +6,9 @@ namespace ElectronicMenu.DataAccess.Entities
     [Table("users")]
     public class UserEntity : IdentityUser<int>, IBaseEntity
     {
-        public Guid ExternalId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTime ModificationTime { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTime CreationTime { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public Guid ExternalId { get; set; }
+        public DateTime ModificationTime { get; set; }
+        public DateTime CreationTime { get; set; }
 
         public string PhoneNumber { get; set; }
 

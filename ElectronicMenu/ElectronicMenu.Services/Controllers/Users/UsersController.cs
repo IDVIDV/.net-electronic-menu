@@ -32,11 +32,11 @@ namespace ElectronicMenu.Services.Controllers.Users
 
         [HttpGet]
         [Route("login")]
-        public async Task<IActionResult> LoginUser([FromQuery] string email, [FromQuery] string password)
+        public async Task<IActionResult> LoginUser([FromQuery] string login, [FromQuery] string password)
         {
             try
             {
-                TokensResponse tokens = await _authProvider.AuthorizeUser(email, password);
+                TokensResponse tokens = await _authProvider.AuthorizeUser(login, password);
                 return Ok(tokens);
             }
             catch (Exception ex)
