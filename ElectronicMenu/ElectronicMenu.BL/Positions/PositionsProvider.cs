@@ -16,7 +16,7 @@ namespace ElectronicMenu.BL.Positions
             _mapper = mapper;
         }
 
-        public PositionModel GetPosition(Guid positionId)
+        public PositionModel GetPosition(int positionId)
         {
             PositionEntity? position = _positionsRepository.GetById(positionId);
 
@@ -47,6 +47,36 @@ namespace ElectronicMenu.BL.Positions
                 (minCalories == null || x.Calories >= minCalories) &&
                 (maxCalories == null || x.Calories <= maxCalories)
                ));
+
+            return _mapper.Map<IEnumerable<PositionModel>>(positions);
+        }
+
+        public IEnumerable<PositionModel> GetFilteredSortedPagePositions(GetFilteredSortedPagePositionModel? rules = null)
+        {
+            float? minPrice = rules?.MinPrice;
+            float? maxPrice = rules?.MaxPrice;
+
+            float? minWeight = rules?.MinWeight;
+            float? maxWeight = rules?.MaxWeight;
+
+            float? minCalories = rules?.MinCalories;
+            float? maxCalories = rules?.MaxCalories;
+
+            IEnumerable<PositionEntity> positions = _positionsRepository.GetAll(x => (
+                (minPrice == null || x.Price >= minPrice) &&
+                (maxPrice == null || x.Price <= maxPrice) &&
+                (minWeight == null || x.Weight >= minWeight) &&
+                (maxWeight == null || x.Weight <= maxWeight) &&
+                (minCalories == null || x.Calories >= minCalories) &&
+                (maxCalories == null || x.Calories <= maxCalories)
+               ));
+
+            if (rules.SortDirection)
+                positions = positions.OrderByDescending(x => x.GetType().GetProperty(rules.SortField)?.GetValue(x) ?? null);
+            else
+                positions = positions.OrderBy(x => x.GetType().GetProperty(rules.SortField)?.GetValue(x) ?? null);
+
+            positions = positions.Skip((rules.Page - 1) * rules.PageSize).Take(rules.PageSize);
 
             return _mapper.Map<IEnumerable<PositionModel>>(positions);
         }

@@ -2,7 +2,7 @@
 {
     public class PositionModel
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string PositionName { get; set; }
         public string ImgLink { get; set; }
         public float Price { get; set; }

@@ -27,7 +27,7 @@ namespace ElectronicMenu.BL.Positions
             return _mapper.Map<PositionModel>(entity);
         }
 
-        public void DeletePosition(Guid positionId)
+        public void DeletePosition(int positionId)
         {
             PositionEntity? entity = _positionsRepository.GetById(positionId);
 
@@ -39,7 +39,7 @@ namespace ElectronicMenu.BL.Positions
             _positionsRepository.Delete(entity);
         }
 
-        public PositionModel UpdatePosition(Guid positionId, UpdatePositionModel model)
+        public PositionModel UpdatePosition(int positionId, UpdatePositionModel model)
         {
             //не могу придумать валидацию уровня BL для данных
 

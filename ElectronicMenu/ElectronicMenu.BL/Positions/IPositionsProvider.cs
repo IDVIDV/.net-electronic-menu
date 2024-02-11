@@ -5,6 +5,7 @@ namespace ElectronicMenu.BL.Positions
     public interface IPositionsProvider
     {
         IEnumerable<PositionModel> GetPositions(PositionModelFilter? filter = null);
-        PositionModel GetPosition(Guid positionId);
+        PositionModel GetPosition(int positionId);
+        public IEnumerable<PositionModel> GetFilteredSortedPagePositions(GetFilteredSortedPagePositionModel? rules = null);
     }
 }

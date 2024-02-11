@@ -11,6 +11,7 @@ namespace ElectronicMenu.Services.Mapper
             CreateMap<PositionsFilter, PositionModelFilter>();
             CreateMap<CreatePositionRequest, CreatePositionModel>();
             CreateMap<UpdatePositionRequest, UpdatePositionModel>();
+            CreateMap<GetFilteredSortedPageRequest, GetFilteredSortedPagePositionModel>();
         }
     }
 }

@@ -9,7 +9,7 @@ namespace ElectronicMenu.BL.Mapper
         public PositionsBLProfile()
         {
             CreateMap<PositionEntity, PositionModel>()
-                .ForMember(x => x.Id, y => y.MapFrom(src => src.ExternalId));
+                .ForMember(x => x.Id, y => y.MapFrom(src => src.Id));
 
             CreateMap<CreatePositionModel, PositionEntity>()
                 .ForMember(x => x.Id, y => y.Ignore())
