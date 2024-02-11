@@ -10,6 +10,17 @@ var settings = ElectronicMenuSettingsReader.Read(configuration);
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        policy =>
+        {
+            policy.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+        });
+});
+
 
 AuthorizationConfigurator.ConfigureServices(builder.Services, settings);
 DbContextConfigurator.ConfigureService(builder.Services, settings);
@@ -26,6 +37,7 @@ SwaggerConfigurator.ConfigureApplication(app);
 DbContextConfigurator.ConfigureApplication(app);
 AuthorizationConfigurator.ConfigureApplication(app);
 
+app.UseCors();
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();

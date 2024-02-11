@@ -47,8 +47,22 @@ namespace ElectronicMenu.Services.Controllers.Positions
         }
 
         [HttpGet]
+        [Route("page")]
+        public IActionResult GetFilteredSortedPositionsPage([FromQuery] GetFilteredSortedPageRequest rules)
+        {
+            IEnumerable<PositionModel> positions = _positionsProvider.GetFilteredSortedPagePositions(
+                _mapper.Map<GetFilteredSortedPagePositionModel>(rules)
+                );
+            return Ok(new PositionsPageResponse
+            {
+                Page = rules.Page,
+                Positions = positions.ToArray()
+            });
+        }
+
+        [HttpGet]
         [Route("{id}")]
-        public IActionResult GetPosition([FromRoute] Guid id)
+        public IActionResult GetPosition([FromRoute] int id)
         {
             try
             {
@@ -62,9 +76,9 @@ namespace ElectronicMenu.Services.Controllers.Positions
             }
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpPost]
-        public IActionResult CreatePosition([FromBody] CreatePositionRequest request) //automatic validation
+        public IActionResult CreatePosition(CreatePositionRequest request) //automatic validation
         {
             try
             {
@@ -78,10 +92,10 @@ namespace ElectronicMenu.Services.Controllers.Positions
             }
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpPut]
         [Route("{id}")]
-        public IActionResult UpdatePosition([FromRoute] Guid id, UpdatePositionRequest request)
+        public IActionResult UpdatePosition([FromRoute] int id, UpdatePositionRequest request)
         {
             try
             {
@@ -95,10 +109,10 @@ namespace ElectronicMenu.Services.Controllers.Positions
             }
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpDelete]
         [Route("{id}")]
-        public IActionResult DeletePosition([FromRoute] Guid id)
+        public IActionResult DeletePosition([FromRoute] int id)
         {
             try
             {
